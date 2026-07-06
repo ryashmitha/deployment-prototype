@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Run Validation Button Options</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-100 p-8">
+  <h1 class="text-2xl font-bold text-gray-900 mb-2">Run Validation Button — Options</h1>
+  <p class="text-sm text-gray-500 mb-8">Each option is shown inside a mock story card (V&V column context).</p>
+
+  <div class="grid grid-cols-2 gap-8 max-w-4xl">
+
+    <!-- Option A: Text link -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-3">Option A — Text Link</h3>
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-72">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-xs font-mono text-gray-500">US-003</span>
+          <span class="text-xs px-1.5 py-0.5 rounded bg-blue-50 text-blue-700">Sprint 24.3</span>
+        </div>
+        <p class="text-sm font-medium text-gray-900 mb-2">Implement Document Upload</p>
+        <div class="flex items-center gap-1.5">
+          <span class="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded bg-yellow-50 text-yellow-700">⏳ Pending</span>
+        </div>
+        <button class="mt-2 w-full text-xs text-indigo-600 hover:text-indigo-800 hover:underline font-medium text-left">
+          Run Validation →
+        </button>
+      </div>
+    </div>
+
+    <!-- Option B: Outline button -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-3">Option B — Outline Button</h3>
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-72">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-xs font-mono text-gray-500">US-003</span>
+          <span class="text-xs px-1.5 py-0.5 rounded bg-blue-50 text-blue-700">Sprint 24.3</span>
+        </div>
+        <p class="text-sm font-medium text-gray-900 mb-2">Implement Document Upload</p>
+        <div class="flex items-center gap-1.5">
+          <span class="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded bg-yellow-50 text-yellow-700">⏳ Pending</span>
+        </div>
+        <button class="mt-2 w-full flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 border border-slate-300 rounded-md hover:bg-slate-100 transition-colors">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Run Validation
+        </button>
+      </div>
+    </div>
+
+    <!-- Option C: Solid indigo button -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-3">Option C — Solid Button</h3>
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-72">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-xs font-mono text-gray-500">US-003</span>
+          <span class="text-xs px-1.5 py-0.5 rounded bg-blue-50 text-blue-700">Sprint 24.3</span>
+        </div>
+        <p class="text-sm font-medium text-gray-900 mb-2">Implement Document Upload</p>
+        <div class="flex items-center gap-1.5">
+          <span class="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded bg-yellow-50 text-yellow-700">⏳ Pending</span>
+        </div>
+        <button class="mt-2 w-full flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md transition-colors">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Run Validation
+        </button>
+      </div>
+    </div>
+
+    <!-- Option D: Ghost button with tint -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-3">Option D — Ghost Tinted</h3>
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-72">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-xs font-mono text-gray-500">US-003</span>
+          <span class="text-xs px-1.5 py-0.5 rounded bg-blue-50 text-blue-700">Sprint 24.3</span>
+        </div>
+        <p class="text-sm font-medium text-gray-900 mb-2">Implement Document Upload</p>
+        <div class="flex items-center gap-1.5">
+          <span class="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded bg-yellow-50 text-yellow-700">⏳ Pending</span>
+        </div>
+        <button class="mt-2 w-full flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-medium text-indigo-600 bg-indigo-50 hover:bg-indigo-100 rounded-md transition-colors">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Validate Package
+        </button>
+      </div>
+    </div>
+
+    <!-- Option E: Icon-only button -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-3">Option E — Icon Only</h3>
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-72">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-xs font-mono text-gray-500">US-003</span>
+          <span class="text-xs px-1.5 py-0.5 rounded bg-blue-50 text-blue-700">Sprint 24.3</span>
+        </div>
+        <p class="text-sm font-medium text-gray-900 mb-2">Implement Document Upload</p>
+        <div class="flex items-center justify-between">
+          <span class="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded bg-yellow-50 text-yellow-700">⏳ Pending</span>
+          <button class="flex items-center justify-center w-7 h-7 rounded-full bg-slate-200 hover:bg-indigo-100 text-slate-600 hover:text-indigo-700 transition-colors" title="Run Validation">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Option F: Badge with play -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-3">Option F — Badge with Play</h3>
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-72">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-xs font-mono text-gray-500">US-003</span>
+          <span class="text-xs px-1.5 py-0.5 rounded bg-blue-50 text-blue-700">Sprint 24.3</span>
+        </div>
+        <p class="text-sm font-medium text-gray-900 mb-2">Implement Document Upload</p>
+        <div class="mt-2 flex items-center justify-between">
+          <span class="text-xs text-slate-400">Not validated</span>
+          <button class="flex items-center gap-1 px-2 py-0.5 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-full hover:bg-indigo-100 transition-colors">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Validate
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mt-12 max-w-4xl border-t border-gray-200 pt-6">
+    <h2 class="text-lg font-semibold text-gray-800 mb-4">Side-by-side comparison (same card width)</h2>
+    <div class="flex gap-4 flex-wrap">
+      <!-- Compact comparison -->
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-56">
+        <p class="text-xs font-medium text-gray-900 mb-1">A — Text link</p>
+        <button class="w-full text-xs text-indigo-600 hover:underline font-medium text-left">Run Validation →</button>
+      </div>
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-56">
+        <p class="text-xs font-medium text-gray-900 mb-1">B — Outline</p>
+        <button class="w-full flex items-center justify-center gap-1 px-2 py-1 text-xs text-slate-700 border border-slate-300 rounded hover:bg-slate-100">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Run Validation
+        </button>
+      </div>
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-56">
+        <p class="text-xs font-medium text-gray-900 mb-1">C — Solid</p>
+        <button class="w-full flex items-center justify-center gap-1 px-2 py-1 text-xs text-white bg-indigo-600 rounded hover:bg-indigo-700">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Run Validation
+        </button>
+      </div>
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-56">
+        <p class="text-xs font-medium text-gray-900 mb-1">D — Ghost tint</p>
+        <button class="w-full flex items-center justify-center gap-1 px-2 py-1 text-xs text-indigo-600 bg-indigo-50 rounded hover:bg-indigo-100">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Validate Package
+        </button>
+      </div>
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-56">
+        <p class="text-xs font-medium text-gray-900 mb-1">E — Icon only</p>
+        <div class="flex justify-end">
+          <button class="w-6 h-6 rounded-full bg-slate-200 hover:bg-indigo-100 flex items-center justify-center" title="Validate">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg border border-gray-200 p-3 w-56">
+        <p class="text-xs font-medium text-gray-900 mb-1">F — Badge pill</p>
+        <div class="flex justify-end">
+          <button class="flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-full hover:bg-indigo-100">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Validate
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

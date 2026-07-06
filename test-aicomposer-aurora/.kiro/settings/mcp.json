@@ -1,0 +1,55 @@
+{
+  "mcpServers": {
+    "design-system": {
+      "command": "node",
+      "args": [
+        "/Users/username/aurora-mcp/build/index.js"
+      ],
+      "timeout": 120000,
+      "disabled": false,
+      "autoApprove": [
+        "get-content-sources",
+        "refresh-sources",
+        "search-design-system",
+        "list-categories",
+        "list-components",
+        "get-component-details",
+        "get-sail-guidance"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--browser",
+        "chromium",
+        "--user-agent",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+      ],
+      "timeout": 120000,
+      "connectionTimeout": 30000,
+      "disabled": false,
+      "autoApprove": [
+        "browser_close",
+        "browser_navigate",
+        "browser_evaluate",
+        "browser_click",
+        "browser_type",
+        "browser_wait_for",
+        "browser_snapshot",
+        "browser_take_screenshot",
+        "browser_network_requests",
+        "browser_run_code",
+        "browser_fill_form",
+        "browser_select_option",
+        "browser_hover",
+        "browser_tabs",
+        "browser_console_messages",
+        "browser_resize",
+        "browser_install",
+        "browser_drag",
+        "browser_handle_dialog"
+      ]
+    }
+  }
+}

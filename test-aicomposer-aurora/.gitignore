@@ -1,0 +1,29 @@
+# .gitignore for Aurora SAIL Starter
+
+# Environment variables (local paths)
+.env
+.env.local
+
+# Kiro
+.kiro/cache/
+.kiro/logs/
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Generated files
+*.log
+*.tmp
+
+# Local MCP configuration overrides
+.kiro/settings/mcp.local.json

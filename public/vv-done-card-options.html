@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V&V + Done Column — Story Card Options</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    @keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(79,70,229,0.3); } 100% { box-shadow: 0 0 0 6px rgba(79,70,229,0); } }
+    .pulse-ring { animation: pulse-ring 1.5s ease-out infinite; }
+  </style>
+</head>
+<body class="bg-gray-100 p-8">
+  <h1 class="text-2xl font-bold text-gray-900 mb-2">Story Card Options — V&V and Done Columns</h1>
+  <p class="text-sm text-gray-500 mb-10">Different UI/UX approaches for cards in Verification & Validation (pre-deploy) and Done (post-deploy) states.</p>
+
+  <!-- V&V SECTION -->
+  <h2 class="text-lg font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2">Verification & Validation Column</h2>
+  <div class="grid grid-cols-3 gap-6 max-w-6xl mb-16">
+
+    <!-- V&V Option A: Status stepper -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">A — Mini Stepper</h3>
+      <p class="text-xs text-gray-500 mb-3">Shows validation progress as a 3-step micro indicator.</p>
+      <div class="bg-white rounded-lg border border-gray-200 overflow-hidden w-64">
+        <div class="h-1 bg-purple-400"></div>
+        <div class="px-4 py-3">
+          <p class="text-sm font-semibold text-gray-900 mb-1">Build Manager Approval</p>
+          <div class="border-l-2 border-gray-300 pl-2 mb-3">
+            <span class="text-xs text-gray-500">Sprint 24.3</span>
+          </div>
+          <!-- Mini stepper -->
+          <div class="flex items-center gap-1 mb-2">
+            <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="flex-1 h-0.5 bg-green-500"></div>
+            <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="flex-1 h-0.5 bg-gray-200"></div>
+            <div class="w-5 h-5 rounded-full border-2 border-indigo-500 bg-white flex items-center justify-center"><span class="w-2 h-2 bg-indigo-500 rounded-full"></span></div>
+          </div>
+          <div class="flex justify-between text-[9px] text-gray-400">
+            <span>Package</span><span>Inspect</span><span>Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- V&V Option B: Progress ring -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">B — Progress Ring</h3>
+      <p class="text-xs text-gray-500 mb-3">Circular progress with status text center.</p>
+      <div class="bg-white rounded-lg border border-gray-200 overflow-hidden w-64">
+        <div class="h-1 bg-purple-400"></div>
+        <div class="px-4 py-3">
+          <p class="text-sm font-semibold text-gray-900 mb-1">Build Manager Approval</p>
+          <div class="border-l-2 border-gray-300 pl-2 mb-3">
+            <span class="text-xs text-gray-500">Sprint 24.3</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="relative w-10 h-10">
+              <svg class="w-10 h-10 -rotate-90" viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="15" fill="none" stroke="#e2e8f0" stroke-width="3"/>
+                <circle cx="18" cy="18" r="15" fill="none" stroke="#6366f1" stroke-width="3" stroke-dasharray="66 100" stroke-linecap="round"/>
+              </svg>
+              <span class="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-indigo-600">4/6</span>
+            </div>
+            <div>
+              <p class="text-xs font-medium text-gray-700">Validating…</p>
+              <p class="text-[10px] text-gray-400">4 of 6 checks passed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- V&V Option C: Validation checklist -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">C — Inline Checklist</h3>
+      <p class="text-xs text-gray-500 mb-3">Compact checklist showing which checks passed/failed.</p>
+      <div class="bg-white rounded-lg border border-gray-200 overflow-hidden w-64">
+        <div class="h-1 bg-purple-400"></div>
+        <div class="px-4 py-3">
+          <p class="text-sm font-semibold text-gray-900 mb-1">Build Manager Approval</p>
+          <div class="border-l-2 border-gray-300 pl-2 mb-3">
+            <span class="text-xs text-gray-500">Sprint 24.3</span>
+          </div>
+          <div class="space-y-1 text-[10px]">
+            <div class="flex items-center gap-1.5"><span class="text-green-500">✓</span> <span class="text-gray-600">Precedents</span></div>
+            <div class="flex items-center gap-1.5"><span class="text-green-500">✓</span> <span class="text-gray-600">Rule tests</span></div>
+            <div class="flex items-center gap-1.5"><span class="text-red-500">✗</span> <span class="text-red-600 font-medium">Release overlap</span></div>
+            <div class="flex items-center gap-1.5"><span class="text-gray-300">○</span> <span class="text-gray-400">Deploy order</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- V&V Option D: Status badge + object count -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">D — Badge + Count (Clean)</h3>
+      <p class="text-xs text-gray-500 mb-3">Just a status badge and object count. Minimal.</p>
+      <div class="bg-white rounded-lg border border-gray-200 overflow-hidden w-64">
+        <div class="h-1 bg-purple-400"></div>
+        <div class="px-4 py-3">
+          <p class="text-sm font-semibold text-gray-900 mb-1">Build Manager Approval</p>
+          <div class="border-l-2 border-gray-300 pl-2 mb-3">
+            <span class="text-xs text-gray-500">Sprint 24.3</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-medium text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">✓ Ready</span>
+            <span class="text-[10px] text-gray-400">14 objects · 📦</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- V&V Option E: Action footer bar -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">E — Footer Action Bar</h3>
+      <p class="text-xs text-gray-500 mb-3">Dedicated footer with validate/deploy buttons.</p>
+      <div class="bg-white rounded-lg border border-gray-200 overflow-hidden w-64">
+        <div class="h-1 bg-purple-400"></div>
+        <div class="px-4 py-3">
+          <p class="text-sm font-semibold text-gray-900 mb-1">Build Manager Approval</p>
+          <div class="border-l-2 border-gray-300 pl-2 mb-2">
+            <span class="text-xs text-gray-500">Sprint 24.3 · 14 objects</span>
+          </div>
+        </div>
+        <div class="px-4 py-2 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+          <span class="text-[10px] text-gray-400">Not validated</span>
+          <button class="text-[10px] font-medium text-indigo-600 hover:text-indigo-800">Validate →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- V&V Option F: Issue count badge -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">F — Issue Counter</h3>
+      <p class="text-xs text-gray-500 mb-3">Shows issue count as a red badge when validation fails.</p>
+      <div class="bg-white rounded-lg border border-gray-200 overflow-hidden w-64 relative">
+        <div class="h-1 bg-purple-400"></div>
+        <div class="absolute top-2 right-2 w-5 h-5 rounded-full bg-red-500 flex items-center justify-center text-[9px] font-bold text-white">2</div>
+        <div class="px-4 py-3">
+          <p class="text-sm font-semibold text-gray-900 mb-1">Build Manager Approval</p>
+          <div class="border-l-2 border-gray-300 pl-2 mb-3">
+            <span class="text-xs text-gray-500">Sprint 24.3</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span class="w-3.5 h-3.5 rounded-full bg-red-100 flex items-center justify-center"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span></span>
+              <span class="text-xs text-gray-500">US-002</span>
+            </div>
+            <span class="text-[10px] text-red-600 font-medium">2 issues</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DONE SECTION -->
+  <h2 class="text-lg font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2">Done Column (Deployed)</h2>
+  <div class="grid grid-cols-3 gap-6 max-w-6xl">
+
+    <!-- Done Option A: Environment ladder -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">A — Environment Ladder</h3>
+      <p class="text-xs text-gray-500 mb-3">Shows which environments it's been deployed to.</p>
+      <div class="bg-white rounded-lg border border-gray-200 overflow-hidden w-64">
+        <div class="h-1 bg-green-500"></div>
+        <div class="px-4 py-3">
+          <p class="text-sm font-semibold text-gray-900 mb-1">Create Employee Onboarding</p>
+          <div class="border-l-2 border-gray-300 pl-2 mb-3">
+            <span class="text-xs text-gray-500">Sprint 24.3</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="text-[9px] font-medium text-white bg-green-500 rounded px-1.5 py-0.5">STG</span>
+            <span class="text-[9px] font-medium text-white bg-blue-500 rounded px-1.5 py-0.5">UAT</span>
+            <span class="text-[9px] font-medium text-gray-400 bg-gray-100 rounded px-1.5 py-0.5">PRD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Done Option B: Deployment timestamp -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">B — Deployed Timestamp</h3>
+      <p class="text-xs text-gray-500 mb-3">Shows when and where it was last deployed.</p>
+      <div class="bg-white rounded-lg border border-gray-200 overflow-hidden w-64">
+        <div class="h-1 bg-green-500"></div>
+        <div class="px-4 py-3">
+          <p class="text-sm font-semibold text-gray-900 mb-1">Create Employee Onboarding</p>
+          <div class="border-l-2 border-gray-300 pl-2 mb-3">
+            <span class="text-xs text-gray-500">Sprint 24.3</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="text-[10px] text-gray-500">
+              <span class="text-green-600 font-medium">Staging</span> · 2 min ago
+            </div>
+            <a href="#" class="text-[10px] text-indigo-600 hover:underline">Promote →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Done Option C: Success celebration -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">C — Success Glow</h3>
+      <p class="text-xs text-gray-500 mb-3">Subtle green glow border to signal completion.</p>
+      <div class="bg-white rounded-lg border-2 border-green-300 overflow-hidden w-64 shadow-sm shadow-green-100">
+        <div class="px-4 py-3">
+          <p class="text-sm font-semibold text-gray-900 mb-1">Create Employee Onboarding</p>
+          <div class="border-l-2 border-gray-300 pl-2 mb-3">
+            <span class="text-xs text-gray-500">Sprint 24.3</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-green-600 font-medium">✓ Live on Staging</span>
+            <span class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Done Option D: Compact with promote button -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">D — Promote CTA</h3>
+      <p class="text-xs text-gray-500 mb-3">Shows deployed env + a prominent promote button.</p>
+      <div class="bg-white rounded-lg border border-gray-200 overflow-hidden w-64">
+        <div class="h-1 bg-green-500"></div>
+        <div class="px-4 py-3">
+          <p class="text-sm font-semibold text-gray-900 mb-2">Create Employee Onboarding</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1 text-[10px] text-green-700 bg-green-50 px-2 py-0.5 rounded-full font-medium">● Staging</span>
+            <button class="text-[10px] font-medium text-white bg-indigo-600 hover:bg-indigo-700 px-2.5 py-1 rounded">Promote to UAT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Done Option E: Muted with checkmark -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">E — Muted Complete</h3>
+      <p class="text-xs text-gray-500 mb-3">Gray-toned card showing "done" feel, less visual noise.</p>
+      <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden w-64">
+        <div class="h-1 bg-green-500"></div>
+        <div class="px-4 py-3">
+          <p class="text-sm font-medium text-gray-600 mb-1">Create Employee Onboarding</p>
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] text-gray-400">Sprint 24.3 · Staging</span>
+            <span class="text-green-500">✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Done Option F: Multi-deploy timeline -->
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700 mb-2">F — Deploy Timeline</h3>
+      <p class="text-xs text-gray-500 mb-3">Vertical mini-timeline of deployments.</p>
+      <div class="bg-white rounded-lg border border-gray-200 overflow-hidden w-64">
+        <div class="h-1 bg-green-500"></div>
+        <div class="px-4 py-3">
+          <p class="text-sm font-semibold text-gray-900 mb-2">Create Employee Onboarding</p>
+          <div class="space-y-1.5 pl-3 border-l-2 border-green-300">
+            <div class="flex items-center gap-2 relative">
+              <span class="absolute -left-[13px] w-2 h-2 rounded-full bg-green-500"></span>
+              <span class="text-[10px] text-gray-600">Staging <span class="text-gray-400">· Jul 6, 2:14 PM</span></span>
+            </div>
+            <div class="flex items-center gap-2 relative">
+              <span class="absolute -left-[13px] w-2 h-2 rounded-full bg-green-500"></span>
+              <span class="text-[10px] text-gray-600">UAT <span class="text-gray-400">· Jul 6, 3:01 PM</span></span>
+            </div>
+            <div class="flex items-center gap-2 relative">
+              <span class="absolute -left-[13px] w-2 h-2 rounded-full bg-gray-300"></span>
+              <span class="text-[10px] text-gray-400">Production — pending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="mt-12 max-w-6xl border-t border-gray-200 pt-6">
+    <h2 class="text-lg font-semibold text-gray-800 mb-4">Summary</h2>
+    <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="text-left px-4 py-2 font-semibold text-gray-600">Column</th>
+          <th class="text-left px-4 py-2 font-semibold text-gray-600">Option</th>
+          <th class="text-left px-4 py-2 font-semibold text-gray-600">Best For</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100">
+        <tr><td class="px-4 py-2">V&V</td><td class="px-4 py-2">A — Mini Stepper</td><td class="px-4 py-2">Showing exactly where in the validation pipeline the story is</td></tr>
+        <tr><td class="px-4 py-2">V&V</td><td class="px-4 py-2">B — Progress Ring</td><td class="px-4 py-2">At-a-glance progress during long validations</td></tr>
+        <tr><td class="px-4 py-2">V&V</td><td class="px-4 py-2">C — Inline Checklist</td><td class="px-4 py-2">Showing exactly which checks passed/failed</td></tr>
+        <tr><td class="px-4 py-2">V&V</td><td class="px-4 py-2">D — Badge + Count</td><td class="px-4 py-2">Cleanest/minimal — just the status at a glance</td></tr>
+        <tr><td class="px-4 py-2">V&V</td><td class="px-4 py-2">E — Footer Action Bar</td><td class="px-4 py-2">Clear call-to-action separated from content</td></tr>
+        <tr><td class="px-4 py-2">V&V</td><td class="px-4 py-2">F — Issue Counter</td><td class="px-4 py-2">Drawing attention to problems that need resolution</td></tr>
+        <tr><td class="px-4 py-2">Done</td><td class="px-4 py-2">A — Environment Ladder</td><td class="px-4 py-2">Multi-env visibility at a glance (STG/UAT/PRD)</td></tr>
+        <tr><td class="px-4 py-2">Done</td><td class="px-4 py-2">B — Deployed Timestamp</td><td class="px-4 py-2">When + where with inline promote action</td></tr>
+        <tr><td class="px-4 py-2">Done</td><td class="px-4 py-2">C — Success Glow</td><td class="px-4 py-2">Celebration/completion feel</td></tr>
+        <tr><td class="px-4 py-2">Done</td><td class="px-4 py-2">D — Promote CTA</td><td class="px-4 py-2">Driving next action (promote to next env)</td></tr>
+        <tr><td class="px-4 py-2">Done</td><td class="px-4 py-2">E — Muted Complete</td><td class="px-4 py-2">Reducing visual noise for done items</td></tr>
+        <tr><td class="px-4 py-2">Done</td><td class="px-4 py-2">F — Deploy Timeline</td><td class="px-4 py-2">Full deployment history at a glance</td></tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

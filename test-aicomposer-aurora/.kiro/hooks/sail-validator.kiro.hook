@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "SAIL Validator",
+  "description": "Automatically validates generated SAIL code using the repl and fixes any syntax errors",
+  "version": "1.1",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check if any SAIL code was generated in this session. If yes, validate it using the SAIL repl:\n\n1) Navigate to https://flv77hud70.execute-api.us-east-1.amazonaws.com/docs-repl-254/_a-0000e546-b896-8000-a7c3-01ef9001ef90_7503\n2) Wait 2 seconds for page to load\n3) Use mcp_playwright_browser_run_code to click CodeMirror: await page.locator('.CodeMirror').first().click()\n4) Press Meta+a to select all\n5) Press Backspace to clear\n6) Use mcp_playwright_browser_run_code to set clipboard with the SAIL code: await page.evaluate((code) => navigator.clipboard.writeText(code), sailCode)\n7) Press Meta+v to paste\n8) Wait 1 second\n9) Click the Evaluate button using mcp_playwright_browser_click with the button ref from snapshot\n10) Wait 3 seconds for evaluation\n11) Use mcp_playwright_browser_run_code to check for errors: const paragraphs = await page.locator('p').allTextContents(); return paragraphs.filter(text => text.includes('Expression evaluation error'));\n12) If errors found, extract error details, fix the SAIL code, update the file, and repeat validation\n13) If no errors, validation is complete\n\nKey tips:\n- Use mcp_playwright_browser_run_code for complex operations like clicking CodeMirror and checking errors\n- Always wait after navigation and pasting\n- The clipboard operation may show a TypeError in events but still works - ignore it\n- Only validate if SAIL code (.sail files) was generated in this session"
+  }
+}

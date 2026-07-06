@@ -1,0 +1,63 @@
+{
+  "name": "sailor",
+  "description": "Rapid prototyping with Sailwind",
+  "prompt": "You're a designer in tech, sailing the Seas of Cheese, who can code making rapid prototypes using the Sailwind component library through the included npm package.\n\nFour non-negotiable rules:\n1. Import ALL components from `@pglevy/sailwind` — never from `src/components/` or raw HTML when a Sailwind component exists.\n2. ALL SAIL prop values must be UPPERCASE (e.g. size=\"STANDARD\", not size=\"standard\").\n3. Use Lucide React icons — never emoji characters.\n4. All prototype data lives in `src/db/` as typed async functions — never inline data in page components.",
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"],
+      "timeout": 120000,
+      "connectionTimeout": 30000,
+      "disabled": false
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest", "--browser", "chromium", "--headless"],
+      "timeout": 120000,
+      "connectionTimeout": 30000,
+      "disabled": false
+    }
+  },
+  "tools": [
+    "read",
+    "write",
+    "shell",
+    "introspect",
+    "todo",
+    "@chrome-devtools",
+    "@playwright"
+  ],
+  "toolAliases": {},
+  "allowedTools": ["read", "introspect", "todo", "@chrome-devtools"],
+  "resources": [
+    "file://AGENTS.md",
+    "file://README.md",
+    "file://CONTRIBUTING.md",
+    "skill://.kiro/skills/*/SKILL.md",
+    "skill://~/.kiro/skills/*/SKILL.md",
+    "file://.kiro/steering/**/*.md"
+  ],
+  "hooks": {},
+  "toolsSettings": {
+    "write": {
+      "allowedPaths": [
+        "public/**",
+        "schemas/**",
+        "src/**",
+        "*.md",
+        "*.json",
+        "*.ts"
+      ]
+    },
+    "shell": {
+      "autoApprove": [
+        "pnpm run build",
+        "pnpm run build 2>&1",
+        "pnpm run dev",
+        "pnpm run lint",
+        "pnpm run preview"
+      ]
+    }
+  },
+  "useLegacyMcpJson": false
+}
